@@ -2,7 +2,7 @@
 # Hinweis: Geraete-spezifische Dinge (Festplatten, Treiber) stehen in
 # hardware-configuration.nix und werden NICHT auf andere Geraete kopiert.
 
-{ config, pkgs, ... }:
+{ config, pkgs, lazyvim, ... }:
 
 {
   imports = [
@@ -87,6 +87,8 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
+    # Reicht den lazyvim-Quellpfad aus flake.nix an die Home-Manager-Module weiter.
+    extraSpecialArgs = { inherit lazyvim; };
     users.blonar = import ./home.nix;
   };
 

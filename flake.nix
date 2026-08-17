@@ -12,9 +12,15 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # LazyVim-Starter (Neovim-Distribution) als reine Quelldatei (kein Flake).
+    lazyvim = {
+      url = "github:LazyVim/starter";
+      flake = false;
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, home-manager, lazyvim, ... }:
   let
     system = "x86_64-linux";
   in {
@@ -23,6 +29,9 @@
     # (mit eigenem hosts/laptop/-Ordner und eigener hardware-configuration.nix).
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
+      # specialArgs reicht den lazyvim-Quellpfad an die NixOS-Module weiter
+      # (von dort an Home Manager, siehe configuration.nix).
+      specialArgs = { inherit lazyvim; };
       modules = [
         ./hosts/nixos/configuration.nix
         home-manager.nixosModules.default
