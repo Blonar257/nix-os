@@ -58,6 +58,12 @@
   # ===== Drucker =====
   services.printing.enable = true;
 
+  # ===== Flatpak =====
+  # Aktiviert den Flatpak-D-Bus-Dienst; Apps installiert man danach mit
+  # `flatpak install flathub <app>`. Die Flathub-Remote wird beim ersten
+  # `flatpak remote-add` (siehe unten) eingerichtet.
+  services.flatpak.enable = true;
+
   # ===== Sound (PipeWire) =====
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -85,6 +91,7 @@
     git
     vim
     htop
+    flatpak  # CLI zum Verwalten von Flatpak-Apps (der Dienst ist oben aktiviert)
   ];
 
   # ===== Home Manager =====

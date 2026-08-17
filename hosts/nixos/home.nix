@@ -25,6 +25,7 @@
     fzf          # Fuzzy-Finder (interaktive Suche, auch in Neovim/LazyVim nutzbar)
     gnugrep      # Klassische Textsuche (im NixOS-Basissystem ohnehin enthalten)
     ripgrep      # Blitzschnelle Regex-Textsuche (rg, Alternative zu grep)
+    pkgs."gnome-extension-manager"  # GNOME-App zum Installieren/Verwalten von Shell-Extensions (nixpkgs-Name, frueher "extension-manager")
   ];
 
   # Hinweis zu rustup auf NixOS: rustup selbst laeuft problemlos, aber die von
