@@ -19,6 +19,8 @@
     ghostty      # Terminal-Emulator
     go           # Go-Toolchain
     rustup       # Rust-Toolchain-Manager (Hinweis zu NixOS siehe unten)
+    gcc          # C-Compiler (fuer Neovim/Treesitter, Go-cgo, Rust-Linker)
+    gnumake      # Build-Tool (gehoert zum C-Compiler-Setup)
   ];
 
   # Hinweis zu rustup auf NixOS: rustup selbst laeuft problemlos, aber die von

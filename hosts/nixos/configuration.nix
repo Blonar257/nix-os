@@ -39,7 +39,9 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
-  # ===== Desktop (GNOME) =====
+  # ===== Desktop (GNOME, Wayland) =====
+  # Hinweis: GNOME 50 laeuft immer auf Wayland; eine eigene Wayland-Option
+  # (gdm.wayland) gibt es nicht mehr, sie ist wirkungslos geworden.
   services.xserver.enable = true;
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
@@ -48,6 +50,10 @@
     variant = "";
   };
   console.keyMap = "de";
+
+  # Wayland: Electron-/Chromium-Apps (VS Code & Co.) nativ auf Wayland
+  # statt per XWayland laufen lassen.
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # ===== Drucker =====
   services.printing.enable = true;
