@@ -34,7 +34,7 @@
     enable = true;
     settings = {
       user.name = "Stefan Schrage";
-      user.email = "deine@email.de"; # <- hier deine E-Mail eintragen
+      user.email = "stefan.schrage@googlemail.com";
       init.defaultBranch = "main";
       pull.rebase = true;
     };
