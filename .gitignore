@@ -1,0 +1,7 @@
+# Build-Ergebnisse von `nix build`
+result
+result-*
+
+# Geheimnisse (falls du spaeter agenix/sops-nix nutzt)
+secrets/
+*.age
