@@ -21,6 +21,10 @@
     rustup       # Rust-Toolchain-Manager (Hinweis zu NixOS siehe unten)
     gcc          # C-Compiler (fuer Neovim/Treesitter, Go-cgo, Rust-Linker)
     gnumake      # Build-Tool (gehoert zum C-Compiler-Setup)
+    fd           # Schnelle Datei-Suche (Alternative zu find)
+    fzf          # Fuzzy-Finder (interaktive Suche, auch in Neovim/LazyVim nutzbar)
+    gnugrep      # Klassische Textsuche (im NixOS-Basissystem ohnehin enthalten)
+    ripgrep      # Blitzschnelle Regex-Textsuche (rg, Alternative zu grep)
   ];
 
   # Hinweis zu rustup auf NixOS: rustup selbst laeuft problemlos, aber die von
